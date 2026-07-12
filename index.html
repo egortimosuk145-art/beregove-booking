@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BEREGOVE — бронювання відпочинку у Звягелі</title>
+<meta name="description" content="Forest House, Sunset House, басейн, карпатський чан та лазня на дровах. Бронюйте онлайн — заявка миттєво прилітає нам у Telegram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest-950:#0e1c16;
+  --forest-900:#152922;
+  --forest-800:#1f382f;
+  --forest-700:#2d4c40;
+  --sage:#8ba384;
+  --sage-light:#c7d4be;
+  --clay:#c17a4a;
+  --clay-light:#e0a877;
+  --water:#4f8f8c;
+  --cream:#f4efe4;
+  --cream-dim:#e7dfcd;
+  --ink:#182219;
+  --font-display:'Fraunces', serif;
+  --font-body:'Inter', sans-serif;
+  --font-mono:'IBM Plex Mono', monospace;
+  --radius:18px;
+  --shadow-soft:0 10px 30px rgba(14,28,22,.15);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html,body{max-width:100%;overflow-x:hidden;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--cream);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+.wrap{max-width:520px;margin:0 auto;padding:0 20px;}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;margin:0;letter-spacing:-.01em;}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--sage);
+}
+
+/* ---------- HEADER ---------- */
+header.topbar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(244,239,228,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--cream-dim);
+}
+.topbar-inner{
+  max-width:520px;margin:0 auto;padding:14px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.logo{
+  font-family:var(--font-display);
+  font-size:clamp(16px,4.5vw,19px);font-weight:700;letter-spacing:.03em;
+  color:var(--forest-900);
+  display:flex;align-items:center;gap:8px;
+  flex-shrink:0;
+}
+.logo svg{width:22px;height:22px;flex-shrink:0;}
+.call-btn{
+  display:flex;align-items:center;gap:6px;
+  background:var(--forest-900);color:var(--cream);
+  border-radius:999px;padding:8px 14px;
+  font-size:13px;font-weight:600;text-decoration:none;
+  white-space:nowrap;flex-shrink:0;
+}
+.call-btn svg{width:14px;height:14px;flex-shrink:0;}
+.lang-toggle{
+  background:transparent;color:var(--forest-900);border:1.5px solid var(--forest-900);
+  border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;
+  font-family:var(--font-mono);cursor:pointer;flex-shrink:0;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  background:radial-gradient(120% 90% at 50% 0%, var(--forest-800) 0%, var(--forest-950) 65%);
+  color:var(--cream);
+  padding:52px 0 46px;
+  overflow:hidden;
+}
+.hero .wrap{position:relative;z-index:2;}
+.ripples{position:absolute;inset:0;opacity:.5;z-index:1;}
+.hero-eyebrow{color:var(--sage-light);}
+.hero h1{
+  font-size:clamp(28px,8.5vw,38px);line-height:1.08;margin-top:14px;color:var(--cream);
+}
+.hero h1 em{color:var(--clay-light);font-style:normal;}
+.hero p{
+  margin-top:16px;font-size:15px;line-height:1.55;color:var(--sage-light);
+  max-width:38ch;
+}
+.hero-cta{
+  margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;
+}
+.btn-primary,.btn-secondary{
+  flex:1 1 auto;justify-content:center;white-space:nowrap;
+}
+.btn-primary{
+  background:var(--clay);color:var(--forest-950);
+  border:none;border-radius:999px;
+  padding:14px 18px;font-size:14.5px;font-weight:700;
+  font-family:var(--font-body);
+  cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-secondary{
+  background:transparent;color:var(--cream);
+  border:1px solid rgba(244,239,228,.35);border-radius:999px;
+  padding:13px 18px;font-size:14.5px;font-weight:600;
+  text-decoration:none;display:inline-flex;align-items:center;
+}
+.hero-strip{
+  margin-top:34px;display:flex;flex-wrap:wrap;row-gap:8px;column-gap:16px;
+  border-top:1px solid rgba(244,239,228,.15);padding-top:18px;
+  font-family:var(--font-mono);font-size:10.5px;color:var(--sage-light);
+  letter-spacing:.03em;
+}
+
+/* ---------- SECTION HEADERS ---------- */
+section{padding:44px 0;}
+.section-head{margin-bottom:22px;}
+.section-head h2{font-size:26px;color:var(--forest-900);margin-top:6px;}
+.section-head p{font-size:14.5px;color:var(--forest-700);margin-top:8px;line-height:1.5;}
+
+/* ---------- SERVICE CARDS ---------- */
+.services-scroll{
+  display:flex;gap:14px;overflow-x:auto;padding:4px 20px 10px;
+  scroll-snap-type:x mandatory;margin:0 -20px;
+  -webkit-overflow-scrolling:touch;
+}
+.services-scroll::-webkit-scrollbar{display:none;}
+.svc-card{
+  scroll-snap-align:start;
+  flex:0 0 min(78%, 320px);
+  background:var(--forest-900);color:var(--cream);
+  border-radius:var(--radius);padding:22px 20px 20px;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow-soft);
+}
+.svc-card.alt{background:var(--water);}
+.svc-card .icon{width:36px;height:36px;color:var(--clay-light);margin-bottom:14px;}
+.svc-card.alt .icon{color:var(--cream);}
+.svc-card h3{font-size:20px;color:var(--cream);}
+.svc-card .sub{font-size:12.5px;color:var(--sage-light);margin-top:4px;}
+.svc-card.alt .sub{color:rgba(244,239,228,.8);}
+.svc-card .price{
+  margin-top:16px;font-family:var(--font-mono);font-size:13px;
+  display:flex;flex-direction:column;gap:3px;color:var(--cream);
+}
+.svc-card .price b{font-size:17px;}
+.svc-card .pick-btn{
+  margin-top:16px;width:100%;background:var(--clay);color:var(--forest-950);
+  border:none;border-radius:999px;padding:11px;font-weight:700;font-size:14px;
+  cursor:pointer;font-family:var(--font-body);
+}
+.svc-card.alt .pick-btn{background:var(--cream);color:var(--forest-950);}
+
+
+
+/* ---------- BOOKING ---------- */
+.booking{background:var(--forest-950);color:var(--cream);border-radius:28px 28px 0 0;}
+.booking .section-head h2{color:var(--cream);}
+.booking .section-head p{color:var(--sage-light);}
+.step{
+  background:var(--forest-900);border-radius:var(--radius);
+  padding:18px 18px 20px;margin-bottom:14px;
+}
+.step-label{
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.step-num{
+  width:24px;height:24px;border-radius:50%;background:var(--clay);color:var(--forest-950);
+  display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);
+  font-size:12px;font-weight:700;flex-shrink:0;
+}
+.step-label span{font-weight:600;font-size:15px;}
+
+.svc-pill-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.svc-pill{
+  border:1px solid var(--forest-700);background:transparent;color:var(--cream);
+  border-radius:12px;padding:10px 10px;font-size:12.5px;font-weight:600;
+  cursor:pointer;text-align:left;font-family:var(--font-body);line-height:1.3;
+  min-width:0;word-break:break-word;
+}
+.svc-pill.active{background:var(--clay);color:var(--forest-950);border-color:var(--clay);}
+
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cal-head button{
+  background:var(--forest-800);border:none;color:var(--cream);width:30px;height:30px;
+  border-radius:8px;cursor:pointer;font-size:15px;
+}
+.cal-head .m-label{font-family:var(--font-mono);font-size:13px;color:var(--sage-light);text-transform:capitalize;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;}
+.cal-dow{font-family:var(--font-mono);font-size:10px;color:var(--sage-light);text-align:center;padding-bottom:4px;}
+.cal-day{
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  border-radius:9px;font-size:12.5px;background:var(--forest-800);color:var(--cream);
+  cursor:pointer;border:1.5px solid transparent;
+}
+.cal-day.empty{visibility:hidden;}
+.cal-day.past,.cal-day.busy{
+  color:var(--forest-700);background:transparent;cursor:not-allowed;text-decoration:line-through;
+}
+.cal-day.selected{background:var(--clay);color:var(--forest-950);font-weight:700;border-color:var(--clay);}
+.cal-legend{display:flex;gap:14px;margin-top:10px;font-size:11px;color:var(--sage-light);}
+.cal-legend span{display:inline-flex;align-items:center;gap:5px;}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+.dot.free{background:var(--forest-800);}
+.dot.busy{background:var(--forest-700);}
+.dot.sel{background:var(--clay);}
+
+.row{display:flex;gap:10px;align-items:center;margin-top:12px;}
+.row label{font-size:13px;color:var(--sage-light);flex:1;}
+.stepper{display:flex;align-items:center;gap:10px;}
+.stepper button{
+  width:30px;height:30px;border-radius:8px;border:none;background:var(--forest-800);
+  color:var(--cream);font-size:16px;cursor:pointer;
+}
+.stepper output{font-family:var(--font-mono);min-width:18px;text-align:center;}
+
+select.slot-select{
+  width:100%;margin-top:10px;background:var(--forest-800);color:var(--cream);
+  border:1px solid var(--forest-700);border-radius:10px;padding:11px;font-size:14px;
+  font-family:var(--font-body);
+}
+
+.field{margin-top:12px;}
+.field label{font-size:12.5px;color:var(--sage-light);display:block;margin-bottom:6px;}
+.field input,.field textarea{
+  width:100%;background:var(--forest-800);border:1px solid var(--forest-700);
+  border-radius:10px;padding:12px;color:var(--cream);font-size:15px;font-family:var(--font-body);
+}
+.field textarea{resize:vertical;min-height:60px;}
+.field input::placeholder,.field textarea::placeholder{color:var(--sage);}
+
+.summary{
+  background:var(--forest-800);border-radius:14px;padding:14px 16px;margin-top:4px;
+}
+.summary-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;color:var(--sage-light);}
+.summary-row b{color:var(--cream);font-weight:600;}
+.summary-total{
+  display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;
+  border-top:1px solid var(--forest-700);font-size:16px;font-weight:700;
+}
+.summary-total span:last-child{font-family:var(--font-mono);color:var(--clay-light);}
+
+.submit-btn{
+  width:100%;margin-top:16px;background:var(--clay);color:var(--forest-950);
+  border:none;border-radius:999px;padding:16px;font-size:16px;font-weight:700;
+  cursor:pointer;font-family:var(--font-body);
+}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed;}
+.hint-err{color:#e0a877;font-size:12px;margin-top:8px;min-height:14px;}
+
+.success-box{
+  display:none;background:var(--forest-900);border-radius:var(--radius);
+  padding:26px 20px;text-align:center;
+}
+.success-box.show{display:block;}
+.success-box svg{width:44px;height:44px;color:var(--clay-light);margin:0 auto 12px;}
+.success-box h3{color:var(--cream);font-size:19px;}
+.success-box p{color:var(--sage-light);font-size:13.5px;margin-top:8px;line-height:1.5;}
+
+/* ---------- INCLUDED DETAILS (expand) ---------- */
+.details-toggle{
+  margin-top:12px;background:none;border:none;color:var(--sage-light);
+  font-size:12.5px;text-decoration:underline;cursor:pointer;padding:0;font-family:var(--font-body);
+}
+.details-box{display:none;margin-top:10px;font-size:12.5px;color:var(--sage-light);line-height:1.6;}
+.details-box.open{display:block;}
+
+/* ---------- INFO / FOOTER ---------- */
+.info-grid{display:flex;flex-direction:column;gap:12px;}
+.info-card{
+  background:#fff;border:1px solid var(--cream-dim);border-radius:14px;padding:16px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.info-card svg{width:20px;height:20px;color:var(--water);flex-shrink:0;margin-top:2px;}
+.info-card b{display:block;font-size:14px;margin-bottom:2px;}
+.info-card span{font-size:13px;color:var(--forest-700);}
+.info-card-link{
+  text-decoration:none;align-items:center;transition:border-color .15s ease, transform .15s ease;
+}
+.info-card-link:active{transform:scale(.98);}
+.info-card-link:hover{border-color:var(--water);}
+.info-card-link div{flex:1;}
+.info-card-link .chevron{width:16px;height:16px;color:var(--forest-700);margin:0;flex-shrink:0;align-self:center;}
+
+footer{background:var(--forest-950);color:var(--sage-light);padding:30px 0 90px;text-align:center;}
+footer .logo{color:var(--cream);justify-content:center;margin-bottom:8px;}
+footer p{font-size:12px;margin:4px 0;}
+footer a{text-decoration:none;color:var(--clay-light);}
+
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:50;
+  background:rgba(14,28,22,.95);backdrop-filter:blur(8px);
+  padding:12px 20px calc(12px + env(safe-area-inset-bottom));
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  transform:translateY(100%);transition:transform .25s ease;
+  border-top:1px solid var(--forest-800);
+}
+.sticky-cta.show{transform:translateY(0);}
+.sticky-cta .info{color:var(--cream);min-width:0;overflow:hidden;}
+.sticky-cta .info b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sticky-cta .info span{font-size:11px;color:var(--sage-light);font-family:var(--font-mono);}
+.sticky-cta a{
+  background:var(--clay);color:var(--forest-950);border-radius:999px;
+  padding:11px 18px;font-weight:700;font-size:13.5px;text-decoration:none;white-space:nowrap;
+  flex-shrink:0;
+}
+
+@media (min-width:521px){
+  .wrap{max-width:560px;}
+}
+
+@media (max-width:360px){
+  .wrap{padding:0 16px;}
+  .hero{padding:40px 0 36px;}
+  .hero p{font-size:14px;}
+  .svc-pill-grid{grid-template-columns:1fr;}
+  .info-card{padding:14px;}
+  .step{padding:16px 14px 18px;}
+  .cal-day{font-size:11.5px;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M3 12c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M12 3v6"/><path d="M9 6l3-3 3 3"/></svg>
+      BEREGOVE
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
+      <a class="call-btn" href="https://www.instagram.com/beregove_?igsh=MWpicmc1MG5pcWd2OQ==" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow hero-eyebrow" id="tEyebrow">BEREGOVE · ЗВЯГЕЛЬ</div>
+    <h1 id="tHeroH1">Тиша, лісове повітря <br>та <em>віддаленість</em> <br>від міста — на вихідні для тебе</h1>
+    <p id="tHeroP">Будинки з камінною залою, чан-гейзер під зорями, лазня на дровах і власний басейн. Оберіть день — ми підтвердимо бронювання особисто.</p>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-primary">
+        <span id="tBookBtn">Забронювати</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#services" class="btn-secondary" id="tSeePrices">Переглянути ціни</a>
+    </div>
+    <div class="hero-strip">
+      <span id="tStrip1">2 БУДИНКИ</span><span id="tStrip2">БАСЕЙН</span><span id="tStrip3">ЧАН</span><span id="tStrip4">ЛАЗНЯ</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap section-head">
+    <div class="eyebrow" id="tServicesEyebrow">Наші послуги</div>
+    <h2 id="tServicesH2">Оберіть свій відпочинок</h2>
+    <p id="tServicesP">Гортайте картки вбік — ціни залежать від дня тижня.</p>
+  </div>
+
+  <div class="services-scroll" id="servicesScroll">
+
+    <div class="svc-card" data-svc="forest">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 5 13h5l-4 8h12l-4-8h5L12 2z"/><path d="M10 21v-4h4v4"/></svg>
+      <h3>Forest House</h3>
+      <div class="sub" id="tForestSub">З камінною залою · до 8 гостей</div>
+      <div class="price" id="tForestPrice">
+        <div>пн–чт <b>4500 грн</b></div>
+        <div>пт–нд <b>5000 грн</b></div>
+      </div>
+      <button class="pick-btn" data-i18n="pickBtn" onclick="pickService('forest')">Обрати дату</button>
+      <button class="details-toggle" data-i18n="detailsToggle" onclick="toggleDetails(this)" style="color:var(--sage-light)">Що входить у вартість?</button>
+      <div class="details-box" id="tForestDetails">У вартість входить перебування 2-х людей: 2 спальні кімнати, санвузол, тераса, камінна зала з кухнею 70 м², ТВ 85", кондиціонер, мангал, рушники, халати, шезлонги, басейн. Заїзд 14:00 / виїзд 11:00.<br><br>Додаткова людина в будинку — 500 грн (до 4 людей), у камінній залі — 750 грн (до 4 людей). Максимум — 8 гостей.</div>
+    </div>
+
+    <div class="svc-card" data-svc="sunset">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+      <h3>Sunset House</h3>
+      <div class="sub" id="tSunsetSub">З чаном-гейзером · до 4 гостей</div>
+      <div class="price" id="tSunsetPrice">
+        <div>пн–чт <b>5000 грн</b></div>
+        <div>пт–нд <b>5500 грн</b></div>
+      </div>
+      <button class="pick-btn" data-i18n="pickBtn" onclick="pickService('sunset')">Обрати дату</button>
+      <button class="details-toggle" data-i18n="detailsToggle" onclick="toggleDetails(this)" style="color:var(--sage-light)">Що входить у вартість?</button>
+      <div class="details-box" id="tSunsetDetails">У вартість входить перебування 2-х людей: кухня, ТВ, кондиціонер, санвузол, тераса, мангал, вогняна тарілка, рушники, халати, шезлонги, басейн. Заїзд 14:00 / виїзд 11:00.<br><br>Додаткова людина — 750 грн, до 4 людей. Чан-гейзер (безлім) — окремо, 2500 грн.</div>
+    </div>
+
+    <div class="svc-card" data-svc="pool">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M6 12V6a2 2 0 0 1 2-2h1"/><circle cx="15" cy="6" r="2"/></svg>
+      <h3>Басейн</h3>
+      <div class="sub" id="tPoolSub">10:00–20:00 · за 1 гостя</div>
+      <div class="price" id="tPoolPrice">
+        <div>пн–пт <b>600 грн</b> · діти 350 грн</div>
+        <div>сб–нд <b>700 грн</b> · діти 400 грн</div>
+      </div>
+      <button class="pick-btn" data-i18n="pickBtn" onclick="pickService('pool')">Обрати дату</button>
+      <button class="details-toggle" data-i18n="detailsToggle" onclick="toggleDetails(this)" style="color:rgba(244,239,228,.85)">Що входить у вартість?</button>
+      <div class="details-box" id="tPoolDetails">У вартість входить перебування з 10:00 до 20:00: шезлонг, душ, перевдягальня, туалет. Діти 4–12 років — за дитячим тарифом. Рушник додатково — 100 грн.</div>
+    </div>
+
+    <div class="svc-card" data-svc="chan">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0 0 16 0"/><path d="M4 12c0-1 1-2 1-2M8 6c0-1 1-2 1-2M12 4c0-1 1-2 1-2M16 6c0-1-1-2-1-2M20 12c0-1-1-2-1-2"/><ellipse cx="12" cy="19" rx="8" ry="2.5"/></svg>
+      <h3>Карпатський чан</h3>
+      <div class="sub" id="tChanSub">3 години · до 6 людей</div>
+      <div class="price" id="tChanPrice"><div><b>2500 грн</b> за сеанс</div></div>
+      <button class="pick-btn" data-i18n="pickBtn" onclick="pickService('chan')">Обрати дату</button>
+      <button class="details-toggle" data-i18n="detailsToggle" onclick="toggleDetails(this)" style="color:var(--sage-light)">Що входить у вартість?</button>
+      <div class="details-box" id="tChanDetails">3 години відпочинку до 6 людей: камінна зала або альтанка, душова, холодна купіль. Додаткова людина — 500 грн.</div>
+    </div>
+
+    <div class="svc-card" data-svc="lazna">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/><path d="M9 14c1-3-1-4 0-7"/></svg>
+      <h3>Лазня на дровах</h3>
+      <div class="sub" id="tLaznaSub">З панорамним вікном · до 5 людей</div>
+      <div class="price" id="tLaznaPrice"><div><b>2500 грн</b> за сеанс</div></div>
+      <button class="pick-btn" data-i18n="pickBtn" onclick="pickService('lazna')">Обрати дату</button>
+      <button class="details-toggle" data-i18n="detailsToggle" onclick="toggleDetails(this)" style="color:var(--sage-light)">Що входить у вартість?</button>
+      <div class="details-box" id="tLaznaDetails">3 години відпочинку до 5 людей: камінна зала або альтанка, душова, холодна купіль. Додаткова людина — 500 грн.</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--clay-light)" id="tBookingEyebrow">Бронювання</div>
+      <h2 id="tBookingH2">Заповніть заявку</h2>
+      <p id="tBookingP">Натисніть «Надіслати» — заявка одразу прийде нам у Telegram, і ми зв'яжемось для підтвердження вільної дати.</p>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="step">
+      <div class="step-label"><div class="step-num">1</div><span id="tStepSvc">Послуга</span></div>
+      <div class="svc-pill-grid" id="svcPills">
+        <button class="svc-pill" data-svc="forest">Forest House</button>
+        <button class="svc-pill" data-svc="sunset">Sunset House</button>
+        <button class="svc-pill" data-svc="pool" id="pillPool">Басейн</button>
+        <button class="svc-pill" data-svc="chan" id="pillChan">Карпатський чан</button>
+        <button class="svc-pill" data-svc="lazna" id="pillLazna">Лазня на дровах</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step">
+      <div class="step-label"><div class="step-num">2</div><span id="tStepDate">Дата та гості</span></div>
+      <div class="cal-head">
+        <button onclick="changeMonth(-1)" id="btnPrevMonth" aria-label="Попередній місяць">‹</button>
+        <div class="m-label" id="calLabel"></div>
+        <button onclick="changeMonth(1)" id="btnNextMonth" aria-label="Наступний місяць">›</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <span><i class="dot free"></i><span id="tLegendFree">вільно</span></span>
+        <span><i class="dot busy"></i><span id="tLegendBusy">зайнято</span></span>
+        <span><i class="dot sel"></i><span id="tLegendSel">обрано</span></span>
+      </div>
+
+      <div id="slotRow" style="display:none">
+        <select class="slot-select" id="timeSlot">
+          <option value="09:00–12:00">09:00–12:00</option>
+          <option value="12:30–15:30">12:30–15:30</option>
+          <option value="16:00–19:00">16:00–19:00</option>
+          <option value="19:30–22:30">19:30–22:30</option>
+        </select>
+      </div>
+
+      <div id="nightsRow" class="row" style="display:none">
+        <label id="tNightsLabel">Кількість ночей</label>
+        <div class="stepper">
+          <button onclick="changeNights(-1)">−</button>
+          <output id="nightsOut">1</output>
+          <button onclick="changeNights(1)">+</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <label id="guestsLabel">Кількість гостей</label>
+        <div class="stepper">
+          <button onclick="changeGuests(-1)">−</button>
+          <output id="guestsOut">2</output>
+          <button onclick="changeGuests(1)">+</button>
+        </div>
+      </div>
+
+      <div id="childrenRow" class="row" style="display:none">
+        <label id="tChildrenLabel">Діти 4–12 років</label>
+        <div class="stepper">
+          <button onclick="changeChildren(-1)">−</button>
+          <output id="childrenOut">0</output>
+          <button onclick="changeChildren(1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step">
+      <div class="step-label"><div class="step-num">3</div><span id="tStepContacts">Контакти</span></div>
+      <div class="field">
+        <label for="fName" id="tNameLabel">Ім'я</label>
+        <input id="fName" type="text" placeholder="Як до вас звертатись">
+      </div>
+      <div class="field">
+        <label for="fContact" id="tContactLabel">Номер телефону</label>
+        <input id="fContact" type="tel" placeholder="+380...">
+      </div>
+      <div class="field">
+        <label for="fComment" id="tCommentLabel">Коментар (необов'язково)</label>
+        <textarea id="fComment" placeholder="Побажання, привід, час прибуття…"></textarea>
+      </div>
+    </div>
+
+    <!-- SUMMARY + SUBMIT -->
+    <div class="step">
+      <div class="step-label"><div class="step-num">4</div><span id="tStepSummary">Підсумок</span></div>
+      <div class="summary" id="summaryBox">
+        <div class="summary-row"><span id="tSumLabelSvc">Послуга</span><b id="sumSvc">—</b></div>
+        <div class="summary-row"><span id="tSumLabelDate">Дата</span><b id="sumDate">—</b></div>
+        <div class="summary-row"><span id="tSumLabelGuests">Гості</span><b id="sumGuests">—</b></div>
+        <div class="summary-total"><span id="tSumLabelTotal">Орієнтовно</span><span id="sumTotal">— грн</span></div>
+      </div>
+      <button class="submit-btn" id="submitBtn" onclick="submitBooking()">Надіслати заявку</button>
+      <div class="hint-err" id="formErr"></div>
+    </div>
+
+    <div class="success-box" id="successBox">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+      <h3 id="tSuccessH3">Заявку надіслано!</h3>
+      <p id="tSuccessP">Дякуємо, <span id="successName">гостю</span>! Ми зв'яжемось із вами найближчим часом, щоб підтвердити дату та деталі. Якщо терміново — напишіть нам в Instagram.</p>
+
+      <a class="btn-secondary" style="margin-top:14px" href="https://www.instagram.com/beregove_?igsh=MWpicmc1MG5pcWd2OQ==" target="_blank" rel="noopener" id="tInstaBtn">Написати в Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" id="tInfoEyebrow">Контакти</div>
+      <h2 id="tInfoH2">Як нас знайти</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+        <div id="tInfoLoc"><b>Розташування</b><span>м. Звягель (Новоград-Волинський), Житомирська обл.</span></div>
+      </div>
+      <div class="info-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <div id="tInfoCheckin"><b>Заїзд / виїзд</b><span>Будинки: 14:00 / 11:00. Басейн, чан, лазня — за обраним слотом.</span></div>
+      </div>
+      <a class="info-card info-card-link" href="https://www.instagram.com/beregove_?igsh=MWpicmc1MG5pcWd2OQ==" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+        <div id="tInfoInsta"><b>Instagram</b><span>@beregove_ — пишіть нам напряму</span></div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M3 12c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M12 3v6"/><path d="M9 6l3-3 3 3"/></svg>
+      BEREGOVE
+    </div>
+    <p id="tFooterTagline">Відпочинок біля води — Звягель</p>
+    <p id="tFooterCopyright">© 2026 Beregove. Усі права захищено.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="info">
+    <b id="stickySvc">Forest House</b>
+    <span id="stickyPrice">від 4500 грн</span>
+  </div>
+  <a href="#booking" id="tStickyBtn">Забронювати</a>
+</div>
+
+<script>
+/* ============================================================
+   НАЛАШТУВАННЯ (заповніть перед публікацією сайту)
+   ============================================================ */
+// Повідомлення в Telegram тепер надсилає Java-бекенд одразу після успішного
+// збереження бронювання (разом із кнопкою "Скасувати" для власника) —
+// тримати токен бота тут, у коді сайту, більше не потрібно і небезпечно.
+
+// Адреса вашого Java-бекенду (Spring Boot проєкт Booking).
+// Бекенд сам віддає зайняті дати з бази даних (GET /availability)
+// і сам перевіряє та фіксує нові бронювання (POST /create).
+// Якщо сайт лежить на іншому сервері/домені — заміните localhost на реальну адресу бекенду.
+const AVAILABILITY_API_URL = "https://beregove-booking.onrender.com/api/bookings/availability";
+const BOOKING_CREATE_URL   = "https://beregove-booking.onrender.com/api/bookings/create";
+
+// Резервний / стартовий список зайнятих дат по кожній послузі. Формат: "YYYY-MM-DD".
+// Використовується лише якщо Java-бекенд недоступний — на випадок збою хостингу
+// сайт не буде показувати всі дати вільними. Наразі порожній: усі актуальні
+// зайняті дати сайт бере напряму з бази даних через Java-бекенд.
+const UNAVAILABLE = {
+  forest: [],
+  sunset: [],
+  pool:   [],
+  chan:   [],
+  lazna:  []
+};
+let LIVE_UNAVAILABLE = UNAVAILABLE;
+
+const SERVICES = {
+  forest: { name:"Forest House", weekday:4500, weekend:5000, extraPerson:500, extraCap:4, includedGuests:2, maxGuests:8, unit:"night" },
+  sunset: { name:"Sunset House", weekday:5000, weekend:5500, extraPerson:750, extraCap:4, includedGuests:2, maxGuests:6, unit:"night" },
+  pool:   { name:"Басейн", weekday:600, weekend:700, childWeekday:350, childWeekend:400, includedGuests:1, maxGuests:20, unit:"day" },
+  chan:   { name:"Карпатський чан", flat:2500, extraPerson:500, includedGuests:6, maxGuests:12, unit:"slot" },
+  lazna:  { name:"Лазня на дровах", flat:2500, extraPerson:500, includedGuests:5, maxGuests:10, unit:"slot" }
+};
+const SERVICE_NAMES_EN = { forest:"Forest House", sunset:"Sunset House", pool:"Pool", chan:"Carpathian Chan", lazna:"Wood-fired Sauna" };
+function getServiceName(id){ return currentLang==='en' ? SERVICE_NAMES_EN[id] : SERVICES[id].name; }
+let currentLang = 'uk';
+
+/* ============================================================ */
+
+let state = {
+  service: null,
+  date: null,       // "YYYY-MM-DD"
+  nights: 1,
+  guests: 2,
+  children: 0,
+  timeSlot: "09:00–12:00"
+};
+let calMonth = new Date();
+calMonth.setDate(1);
+
+function pad(n){ return n<10 ? "0"+n : n; }
+function toKey(d){ return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); }
+function isWeekendHouse(date){ const d=date.getDay(); return d===5||d===6||d===0; } // Fri, Sat, Sun
+function isWeekendPool(date){ const d=date.getDay(); return d===6||d===0; } // Sat, Sun only
+
+function pickService(id){
+  state.service = id;
+  document.querySelectorAll('.svc-pill').forEach(p=>{
+    p.classList.toggle('active', p.dataset.svc===id);
+  });
+  updateFieldsForService();
+  renderCalendar();
+  updateSummary();
+  document.getElementById('booking').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+document.getElementById('svcPills').addEventListener('click', e=>{
+  const btn = e.target.closest('.svc-pill');
+  if(btn) pickService(btn.dataset.svc);
+});
+
+function toggleDetails(btn){
+  const box = btn.nextElementSibling;
+  box.classList.toggle('open');
+}
+
+function updateFieldsForService(){
+  const s = SERVICES[state.service];
+  document.getElementById('nightsRow').style.display = s.unit==='night' ? 'flex' : 'none';
+  document.getElementById('slotRow').style.display = s.unit==='slot' ? 'block' : 'none';
+  document.getElementById('childrenRow').style.display = state.service==='pool' ? 'flex' : 'none';
+  document.getElementById('guestsLabel').textContent = state.service==='pool'
+    ? (currentLang==='en' ? 'Adults' : 'Дорослі')
+    : (currentLang==='en' ? 'Number of guests' : 'Кількість гостей');
+  state.guests = s.includedGuests;
+  document.getElementById('guestsOut').textContent = state.guests;
+  state.children = 0;
+  document.getElementById('childrenOut').textContent = 0;
+  state.nights = 1;
+  document.getElementById('nightsOut').textContent = 1;
+}
+
+function changeGuests(delta){
+  if(!state.service) return;
+  const s = SERVICES[state.service];
+  let v = state.guests + delta;
+  v = Math.max(1, Math.min(s.maxGuests, v));
+  state.guests = v;
+  document.getElementById('guestsOut').textContent = v;
+  updateSummary();
+}
+function changeChildren(delta){
+  let v = state.children + delta;
+  v = Math.max(0, Math.min(10, v));
+  state.children = v;
+  document.getElementById('childrenOut').textContent = v;
+  updateSummary();
+}
+function changeNights(delta){
+  let v = state.nights + delta;
+  v = Math.max(1, Math.min(7, v));
+  state.nights = v;
+  document.getElementById('nightsOut').textContent = v;
+  updateSummary();
+}
+document.getElementById('timeSlot').addEventListener('change', e=>{
+  state.timeSlot = e.target.value;
+  updateSummary();
+});
+
+function changeMonth(delta){
+  calMonth.setMonth(calMonth.getMonth()+delta);
+  renderCalendar();
+}
+
+function renderCalendar(){
+  const grid = document.getElementById('calGrid');
+  const label = document.getElementById('calLabel');
+  grid.innerHTML = "";
+  const monthNamesUk = ["січень","лютий","березень","квітень","травень","червень","липень","серпень","вересень","жовтень","листопад","грудень"];
+  const monthNamesEn = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const monthNames = currentLang==='en' ? monthNamesEn : monthNamesUk;
+  label.textContent = monthNames[calMonth.getMonth()] + " " + calMonth.getFullYear();
+
+  const dowsUk = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"];
+  const dowsEn = ["Mo","Tu","We","Th","Fr","Sa","Su"];
+  const dows = currentLang==='en' ? dowsEn : dowsUk;
+  dows.forEach(d=>{
+    const el = document.createElement('div');
+    el.className = 'cal-dow'; el.textContent = d;
+    grid.appendChild(el);
+  });
+
+  const first = new Date(calMonth.getFullYear(), calMonth.getMonth(), 1);
+  let startOffset = first.getDay() - 1; // Monday-first
+  if(startOffset < 0) startOffset = 6;
+  for(let i=0;i<startOffset;i++){
+    const el = document.createElement('div');
+    el.className = 'cal-day empty';
+    grid.appendChild(el);
+  }
+
+  const daysInMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()+1, 0).getDate();
+  const today = new Date(); today.setHours(0,0,0,0);
+  const busyList = state.service ? (LIVE_UNAVAILABLE[state.service]||[]) : [];
+
+  for(let d=1; d<=daysInMonth; d++){
+    const date = new Date(calMonth.getFullYear(), calMonth.getMonth(), d);
+    const key = toKey(date);
+    const el = document.createElement('div');
+    el.className = 'cal-day';
+    el.textContent = d;
+    if(date < today){
+      el.classList.add('past');
+    } else if(busyList.includes(key)){
+      el.classList.add('busy');
+    } else {
+      el.addEventListener('click', ()=>{
+        state.date = key;
+        renderCalendar();
+        updateSummary();
+      });
+    }
+    if(state.date === key) el.classList.add('selected');
+    grid.appendChild(el);
+  }
+}
+
+function priceForDay(date, s){
+  if(s.unit==='slot' || s.flat) return s.flat;
+  const weekend = state.service==='pool' ? isWeekendPool(date) : isWeekendHouse(date);
+  return weekend ? s.weekend : s.weekday;
+}
+
+function calcTotal(){
+  if(!state.service || !state.date) return 0;
+  const s = SERVICES[state.service];
+  const startDate = new Date(state.date+"T00:00:00");
+
+  if(s.unit==='night'){
+    let total = 0;
+    for(let i=0;i<state.nights;i++){
+      const d = new Date(startDate); d.setDate(d.getDate()+i);
+      total += priceForDay(d, s);
+    }
+    const extra = Math.max(0, state.guests - s.includedGuests);
+    total += extra * s.extraPerson * state.nights;
+    return total;
+  }
+  if(s.unit==='slot'){
+    let total = s.flat;
+    const extra = Math.max(0, state.guests - s.includedGuests);
+    total += extra * s.extraPerson;
+    return total;
+  }
+  if(s.unit==='day'){
+    const weekend = isWeekendPool(startDate);
+    const adultPrice = weekend ? s.weekend : s.weekday;
+    const childPrice = weekend ? s.childWeekend : s.childWeekday;
+    return state.guests*adultPrice + state.children*childPrice;
+  }
+  return 0;
+}
+
+function updateSummary(){
+  const svcName = state.service ? getServiceName(state.service) : "—";
+  document.getElementById('sumSvc').textContent = svcName;
+
+  const locale = currentLang==='en' ? 'en-GB' : 'uk-UA';
+  let dateTxt = "—";
+  if(state.date){
+    const d = new Date(state.date+"T00:00:00");
+    dateTxt = d.toLocaleDateString(locale, {day:'numeric', month:'long'});
+    if(state.service==='chan' || state.service==='lazna') dateTxt += ", " + state.timeSlot;
+    if(state.service && SERVICES[state.service].unit==='night' && state.nights>1){
+      dateTxt += currentLang==='en' ? " · " + state.nights + " night(s)" : " · " + state.nights + " ноч.";
+    }
+  }
+  document.getElementById('sumDate').textContent = dateTxt;
+
+  let guestsTxt = "—";
+  if(state.service){
+    if(currentLang==='en'){
+      guestsTxt = state.guests + (state.service==='pool' ? " adults" : " guests");
+      if(state.service==='pool' && state.children>0) guestsTxt += ", " + state.children + " children";
+    } else {
+      guestsTxt = state.guests + (state.service==='pool' ? " дорос.": " гост.");
+      if(state.service==='pool' && state.children>0) guestsTxt += ", " + state.children + " дит.";
+    }
+  }
+  document.getElementById('sumGuests').textContent = guestsTxt;
+
+  const total = calcTotal();
+  document.getElementById('sumTotal').textContent = total ? total.toLocaleString('uk-UA') + " грн" : "— грн";
+
+  // sticky bar
+  if(state.service){
+    const s = SERVICES[state.service];
+    document.getElementById('stickySvc').textContent = getServiceName(state.service);
+    const from = s.flat ? s.flat : s.weekday;
+    const fromLabel = currentLang==='en' ? "from " : "від ";
+    document.getElementById('stickyPrice').textContent = fromLabel + from.toLocaleString('uk-UA') + " грн";
+    document.getElementById('stickyCta').classList.add('show');
+  }
+}
+
+async function submitBooking(){
+  const errEl = document.getElementById('formErr');
+  errEl.textContent = "";
+
+  if(!state.service){ errEl.textContent = currentLang==='en' ? "Please choose a service." : "Оберіть послугу."; return; }
+  if(!state.date){ errEl.textContent = currentLang==='en' ? "Please choose a date." : "Оберіть дату."; return; }
+  const name = document.getElementById('fName').value.trim();
+  const contact = document.getElementById('fContact').value.trim();
+  if(!name){ errEl.textContent = currentLang==='en' ? "Please enter your name." : "Вкажіть ваше ім'я."; return; }
+  if(contact.length < 2){ errEl.textContent = currentLang==='en' ? "Please enter your phone number." : "Вкажіть номер телефону."; return; }
+
+  const comment = document.getElementById('fComment').value.trim();
+  const s = SERVICES[state.service];
+  const total = calcTotal();
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = currentLang==='en' ? "Checking availability…" : "Перевіряємо дату…";
+
+  // Re-sync with the sheet right before booking to catch dates taken by others since page load
+  await loadAvailability();
+  if(isDateRangeTaken(state.service, state.date, state.nights)){
+    errEl.textContent = currentLang==='en'
+      ? "Sorry, this date was just booked by someone else. Please choose another."
+      : "На жаль, цю дату щойно забронювали. Оберіть, будь ласка, іншу дату.";
+    btn.textContent = currentLang==='en' ? "Send request" : "Надіслати заявку";
+    btn.disabled = false;
+    state.date = null;
+    renderCalendar();
+    updateSummary();
+    return;
+  }
+
+  btn.textContent = currentLang==='en' ? "Sending…" : "Надсилаємо…";
+
+  const backendResult = await reportBookingToBackend({
+    service: state.service,
+    date: state.date,
+    nights: state.nights,
+    timeSlot: state.timeSlot,
+    guests: state.guests,
+    children: state.children,
+    total: total,
+    name: name,
+    contact: contact,
+    comment: comment
+  });
+
+  if(backendResult && backendResult.ok === false){
+    if(backendResult.offline){
+      errEl.textContent = currentLang==='en'
+        ? "Could not reach the booking server. Please check your connection and try again."
+        : "Не вдалося зв'язатися із сервером бронювань. Перевірте з'єднання і спробуйте ще раз.";
+      btn.textContent = currentLang==='en' ? "Send request" : "Надіслати заявку";
+      btn.disabled = false;
+      return;
+    }
+    errEl.textContent = currentLang==='en'
+      ? "Sorry, this date was just booked by someone else. Please choose another."
+      : "На жаль, цю дату щойно забронювали. Оберіть, будь ласка, іншу дату.";
+    btn.textContent = currentLang==='en' ? "Send request" : "Надіслати заявку";
+    btn.disabled = false;
+    state.date = null;
+    await loadAvailability();
+    renderCalendar();
+    updateSummary();
+    return;
+  }
+
+  const d = new Date(state.date+"T00:00:00");
+  const dateTxt = d.toLocaleDateString('uk-UA', {day:'numeric', month:'long', year:'numeric'});
+
+  // Повідомлення власнику в Telegram вже надіслав Java-бекенд одразу після
+  // збереження бронювання в базу (разом із кнопкою "Скасувати").
+
+  document.getElementById('successName').textContent = name;
+  document.getElementById('successBox').classList.add('show');
+  document.getElementById('successBox').scrollIntoView({behavior:'smooth', block:'center'});
+  btn.textContent = currentLang==='en' ? "Send request" : "Надіслати заявку";
+  btn.disabled = false;
+
+  // Refresh so this same session immediately sees the date as busy (no reload needed)
+  await loadAvailability();
+  renderCalendar();
+}
+
+async function loadAvailability(){
+  if(!AVAILABILITY_API_URL) return;
+  try{
+    const res = await fetch(AVAILABILITY_API_URL);
+    const data = await res.json();
+    if(data && typeof data === 'object'){
+      // Бекенд повертає лише ті послуги, де вже є бронювання —
+      // доповнюємо стартовим списком UNAVAILABLE, щоб нічого не загубити.
+      const merged = {};
+      Object.keys(SERVICES).forEach(key=>{
+        const fromServer = data[key] || [];
+        const fallback = UNAVAILABLE[key] || [];
+        merged[key] = Array.from(new Set([...fallback, ...fromServer]));
+      });
+      LIVE_UNAVAILABLE = merged;
+      renderCalendar();
+    }
+  }catch(e){
+    console.warn("Не вдалось завантажити зайняті дати з Java-бекенду. Перевірте, чи запущений сервер (mvn spring-boot:run). Використовується локальний список.", e);
+    LIVE_UNAVAILABLE = UNAVAILABLE;
+  }
+}
+
+async function reportBookingToBackend(payload){
+  if(!BOOKING_CREATE_URL) return { ok:true, offline:true };
+  try{
+    const res = await fetch(BOOKING_CREATE_URL, {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({
+        service: payload.service,
+        date: payload.date,
+        nights: payload.nights,
+        timeSlot: payload.timeSlot,
+        guests: payload.guests,
+        children: payload.children,
+        total: payload.total,
+        name: payload.name,
+        contact: payload.contact,
+        comment: payload.comment
+      })
+    });
+    const data = await res.json();
+    return data; // { ok: true } або { ok: false, message: "..." }
+  }catch(e){
+    console.error("Не вдалось звʼязатися з Java-бекендом бронювань. Перевірте, чи запущений сервер на http://localhost:8080.", e);
+    return { ok:false, offline:true };
+  }
+}
+
+function isDateRangeTaken(service, dateStr, nights){
+  const s = SERVICES[service];
+  const busyList = LIVE_UNAVAILABLE[service] || [];
+  const n = s.unit==='night' ? nights : 1;
+  const start = new Date(dateStr+"T00:00:00");
+  for(let i=0;i<n;i++){
+    const d = new Date(start); d.setDate(d.getDate()+i);
+    if(busyList.includes(toKey(d))) return true;
+  }
+  return false;
+}
+
+const I18N = {
+  tEyebrow: { uk:"BEREGOVE · ЗВЯГЕЛЬ", en:"BEREGOVE · ZVIAHEL" },
+  tHeroH1_html: {
+    uk:"Тиша, лісове повітря <br>та <em>віддаленість</em> <br>від міста — на вихідні для тебе",
+    en:"Quiet, water<br>and <em>wood</em> —<br>for your weekend"
+  },
+  tHeroP: {
+    uk:"Будинки з камінною залою, чан-гейзер під зорями, лазня на дровах і власний басейн. Оберіть день — ми підтвердимо бронювання особисто.",
+    en:"Houses with a fireplace hall, a geyser hot tub under the stars, a wood-fired sauna and your own pool. Pick a day — we'll confirm your booking personally."
+  },
+  tBookBtn: { uk:"Забронювати", en:"Book now" },
+  tSeePrices: { uk:"Переглянути ціни", en:"See prices" },
+  tStrip1: { uk:"2 БУДИНКИ", en:"2 HOUSES" },
+  tStrip2: { uk:"БАСЕЙН", en:"POOL" },
+  tStrip3: { uk:"ЧАН", en:"CHAN" },
+  tStrip4: { uk:"ЛАЗНЯ", en:"SAUNA" },
+
+  tServicesEyebrow: { uk:"Наші послуги", en:"Our services" },
+  tServicesH2: { uk:"Оберіть свій відпочинок", en:"Choose your getaway" },
+  tServicesP: { uk:"Гортайте картки вбік — ціни залежать від дня тижня.", en:"Swipe the cards — prices depend on the day of the week." },
+
+  tForestSub: { uk:"З камінною залою · до 8 гостей", en:"With a fireplace hall · up to 8 guests" },
+  tForestPrice_html: {
+    uk:'<div>пн–чт <b>4500 грн</b></div><div>пт–нд <b>5000 грн</b></div>',
+    en:'<div>Mon–Thu <b>4500 UAH</b></div><div>Fri–Sun <b>5000 UAH</b></div>'
+  },
+  tForestDetails_html: {
+    uk:'У вартість входить перебування 2-х людей: 2 спальні кімнати, санвузол, тераса, камінна зала з кухнею 70 м², ТВ 85", кондиціонер, мангал, рушники, халати, шезлонги, басейн. Заїзд 14:00 / виїзд 11:00.<br><br>Додаткова людина в будинку — 500 грн (до 4 людей), у камінній залі — 750 грн (до 4 людей). Максимум — 8 гостей.',
+    en:'Includes stay for 2 guests: 2 bedrooms, bathroom, terrace, 70 m² fireplace hall with kitchen, 85" TV, air conditioning, BBQ, towels, robes, sun loungers, pool. Check-in 14:00 / check-out 11:00.<br><br>Extra guest in the house — 500 UAH (up to 4 people), in the fireplace hall — 750 UAH (up to 4 people). Maximum — 8 guests.'
+  },
+
+  tSunsetSub: { uk:"З чаном-гейзером · до 4 гостей", en:"With a geyser hot tub · up to 4 guests" },
+  tSunsetPrice_html: {
+    uk:'<div>пн–чт <b>5000 грн</b></div><div>пт–нд <b>5500 грн</b></div>',
+    en:'<div>Mon–Thu <b>5000 UAH</b></div><div>Fri–Sun <b>5500 UAH</b></div>'
+  },
+  tSunsetDetails_html: {
+    uk:'У вартість входить перебування 2-х людей: кухня, ТВ, кондиціонер, санвузол, тераса, мангал, вогняна тарілка, рушники, халати, шезлонги, басейн. Заїзд 14:00 / виїзд 11:00.<br><br>Додаткова людина — 750 грн, до 4 людей. Чан-гейзер (безлім) — окремо, 2500 грн.',
+    en:'Includes stay for 2 guests: kitchen, TV, air conditioning, bathroom, terrace, BBQ, fire bowl, towels, robes, sun loungers, pool. Check-in 14:00 / check-out 11:00.<br><br>Extra guest — 750 UAH, up to 4 people. Geyser hot tub (unlimited) — separately, 2500 UAH.'
+  },
+
+  tPoolSub: { uk:"10:00–20:00 · за 1 гостя", en:"10:00–20:00 · per 1 guest" },
+  tPoolPrice_html: {
+    uk:'<div>пн–пт <b>600 грн</b> · діти 350 грн</div><div>сб–нд <b>700 грн</b> · діти 400 грн</div>',
+    en:'<div>Mon–Fri <b>600 UAH</b> · kids 350 UAH</div><div>Sat–Sun <b>700 UAH</b> · kids 400 UAH</div>'
+  },
+  tPoolDetails_html: {
+    uk:'У вартість входить перебування з 10:00 до 20:00: шезлонг, душ, перевдягальня, туалет. Діти 4–12 років — за дитячим тарифом. Рушник додатково — 100 грн.',
+    en:'Includes access from 10:00 to 20:00: sun lounger, shower, changing room, toilet. Children 4–12 years — at the children\'s rate. Towel extra — 100 UAH.'
+  },
+
+  tChanSub: { uk:"3 години · до 6 людей", en:"3 hours · up to 6 people" },
+  tChanPrice_html: { uk:'<div><b>2500 грн</b> за сеанс</div>', en:'<div><b>2500 UAH</b> per session</div>' },
+  tChanDetails_html: {
+    uk:'3 години відпочинку до 6 людей: камінна зала або альтанка, душова, холодна купіль. Додаткова людина — 500 грн.',
+    en:'3 hours of relaxation for up to 6 people: fireplace hall or gazebo, shower, cold plunge. Extra person — 500 UAH.'
+  },
+
+  tLaznaSub: { uk:"З панорамним вікном · до 5 людей", en:"With a panoramic window · up to 5 people" },
+  tLaznaPrice_html: { uk:'<div><b>2500 грн</b> за сеанс</div>', en:'<div><b>2500 UAH</b> per session</div>' },
+  tLaznaDetails_html: {
+    uk:'3 години відпочинку до 5 людей: камінна зала або альтанка, душова, холодна купіль. Додаткова людина — 500 грн.',
+    en:'3 hours of relaxation for up to 5 people: fireplace hall or gazebo, shower, cold plunge. Extra person — 500 UAH.'
+  },
+
+  pickBtn: { uk:"Обрати дату", en:"Choose a date" },
+  detailsToggle: { uk:"Що входить у вартість?", en:"What's included?" },
+
+  tBookingEyebrow: { uk:"Бронювання", en:"Booking" },
+  tBookingH2: { uk:"Заповніть заявку", en:"Fill in the request" },
+  tBookingP: {
+    uk:"Натисніть «Надіслати» — заявка одразу прийде нам у Telegram, і ми зв'яжемось для підтвердження вільної дати.",
+    en:"Press \u201cSend\u201d — your request goes straight to us on Telegram, and we'll get back to you to confirm the date."
+  },
+
+  tStepSvc: { uk:"Послуга", en:"Service" },
+  pillPool: { uk:"Басейн", en:"Pool" },
+  pillChan: { uk:"Карпатський чан", en:"Carpathian Chan" },
+  pillLazna: { uk:"Лазня на дровах", en:"Wood-fired Sauna" },
+
+  tStepDate: { uk:"Дата та гості", en:"Date & guests" },
+  tLegendFree: { uk:"вільно", en:"free" },
+  tLegendBusy: { uk:"зайнято", en:"booked" },
+  tLegendSel: { uk:"обрано", en:"selected" },
+  tNightsLabel: { uk:"Кількість ночей", en:"Number of nights" },
+  tChildrenLabel: { uk:"Діти 4–12 років", en:"Children 4–12 y.o." },
+  btnPrevMonth_aria: { uk:"Попередній місяць", en:"Previous month" },
+  btnNextMonth_aria: { uk:"Наступний місяць", en:"Next month" },
+
+  tStepContacts: { uk:"Контакти", en:"Contacts" },
+  tNameLabel: { uk:"Ім'я", en:"Name" },
+  tContactLabel: { uk:"Номер телефону", en:"Phone number" },
+  tCommentLabel: { uk:"Коментар (необов'язково)", en:"Comment (optional)" },
+  fName_placeholder: { uk:"Як до вас звертатись", en:"How should we call you" },
+  fContact_placeholder: { uk:"+380...", en:"+380..." },
+  fComment_placeholder: { uk:"Побажання, привід, час прибуття…", en:"Wishes, occasion, arrival time…" },
+
+  tStepSummary: { uk:"Підсумок", en:"Summary" },
+  tSumLabelSvc: { uk:"Послуга", en:"Service" },
+  tSumLabelDate: { uk:"Дата", en:"Date" },
+  tSumLabelGuests: { uk:"Гості", en:"Guests" },
+  tSumLabelTotal: { uk:"Орієнтовно", en:"Estimated" },
+
+  tSuccessH3: { uk:"Заявку надіслано!", en:"Request sent!" },
+  tSuccessP_html: {
+    uk:'Дякуємо, <span id="successName">гостю</span>! Ми зв\'яжемось із вами найближчим часом, щоб підтвердити дату та деталі. Якщо терміново — напишіть нам в Instagram.',
+    en:'Thank you, <span id="successName">guest</span>! We\'ll get in touch with you shortly to confirm the date and details. For urgent matters — message us on Instagram.'
+  },
+  tInstaBtn: { uk:"Написати в Instagram", en:"Message us on Instagram" },
+
+  tInfoEyebrow: { uk:"Контакти", en:"Contacts" },
+  tInfoH2: { uk:"Як нас знайти", en:"How to find us" },
+  tInfoLoc_html: {
+    uk:'<b>Розташування</b><span>м. Звягель (Новоград-Волинський), Житомирська обл.</span>',
+    en:'<b>Location</b><span>Zviahel (Novohrad-Volynskyi), Zhytomyr region, Ukraine</span>'
+  },
+  tInfoCheckin_html: {
+    uk:'<b>Заїзд / виїзд</b><span>Будинки: 14:00 / 11:00. Басейн, чан, лазня — за обраним слотом.</span>',
+    en:'<b>Check-in / check-out</b><span>Houses: 14:00 / 11:00. Pool, chan, sauna — per your chosen time slot.</span>'
+  },
+  tInfoInsta_html: {
+    uk:'<b>Instagram</b><span>@beregove_ — пишіть нам напряму</span>',
+    en:'<b>Instagram</b><span>@beregove_ — message us directly</span>'
+  },
+
+  tFooterTagline: { uk:"Відпочинок біля води — Звягель", en:"Riverside retreat — Zviahel" },
+  tFooterCopyright: { uk:"© 2026 Beregove. Усі права захищено.", en:"© 2026 Beregove. All rights reserved." },
+  tStickyBtn: { uk:"Забронювати", en:"Book now" }
+};
+
+function toggleLang(){
+  currentLang = currentLang === 'uk' ? 'en' : 'uk';
+  applyLang();
+}
+
+function applyLang(){
+  const lang = currentLang;
+  document.documentElement.lang = lang;
+  document.getElementById('langToggle').textContent = lang === 'uk' ? 'EN' : 'UA';
+
+  // simple textContent swaps
+  document.querySelectorAll('[id]').forEach(el=>{
+    const key = el.id;
+    if(I18N[key]) el.textContent = I18N[key][lang];
+  });
+
+  // innerHTML swaps (contain tags)
+  Object.keys(I18N).forEach(key=>{
+    if(key.endsWith('_html')){
+      const id = key.replace('_html','');
+      const el = document.getElementById(id);
+      if(el) el.innerHTML = I18N[key][lang];
+    }
+    if(key.endsWith('_aria')){
+      const id = key.replace('_aria','');
+      const el = document.getElementById(id);
+      if(el) el.setAttribute('aria-label', I18N[key][lang]);
+    }
+    if(key.endsWith('_placeholder')){
+      const id = key.replace('_placeholder','');
+      const el = document.getElementById(id);
+      if(el) el.setAttribute('placeholder', I18N[key][lang]);
+    }
+  });
+
+  // data-i18n repeated elements (pickBtn, detailsToggle)
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.dataset.i18n;
+    if(I18N[key]) el.textContent = I18N[key][lang];
+  });
+
+  // dynamic bits driven by JS state
+  updateFieldsForService();
+  renderCalendar();
+  updateSummary();
+}
+
+// init
+pickService('forest');
+renderCalendar();
+updateSummary();
+loadAvailability();
+</script>
+</body>
+</html>
